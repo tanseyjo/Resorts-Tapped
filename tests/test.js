@@ -1,16 +1,22 @@
+accountPage = {}
 module.exports = {
     beforeEach: browser => {
-        browser.url('https://rta-staging.firebaseapp.com/#/sign-up/amFja3Nvbl9ob2xl')
+        accountPage = browser.page.accountCreation()
+        accountPage.navigate()
     },
     after: browser => {
         browser.end()
     },
     //Test Resorts Tapped 
     'login': browser => {
-        browser.setValue('input[placeholder="Email"]', 'qatesting@test.com')
-            .setValue('input[placeholder="Password"]', '')
-            .setValue('input[placeholder="Confirm Password"]', '123456')
-            .click('button[class="button is-success"]')
+        accountPage
+        .setValue('@emailEntryLine','qatesting4@test.com')
+             .setValue('@passwordEntry', '123456')
+            .setValue('@passwordConfirm', '123456')
+            .click('@submitButton')
+            .waitForElementPresent('@header', 10000 )
+            .waitForElementVisible('@logOut', 10000)
+            .click('@logOut')
     }
 }
 
