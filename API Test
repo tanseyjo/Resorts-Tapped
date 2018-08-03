@@ -1,0 +1,36 @@
+{
+	"info": {
+		"_postman_id": "2e9cfe3c-498e-43ab-9bb4-56fc56b0f103",
+		"name": "Resorts Tapped API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Jackson Hole GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://us-central1-rta-staging.cloudfunctions.net/httpEndpoint?r=jackson_hole",
+					"protocol": "https",
+					"host": [
+						"us-central1-rta-staging",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"httpEndpoint"
+					],
+					"query": [
+						{
+							"key": "r",
+							"value": "jackson_hole"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
